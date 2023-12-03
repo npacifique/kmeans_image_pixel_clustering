@@ -25,4 +25,4 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 EXPOSE 8011
 
 # Define the command to run the application
-CMD ["python", "app.py", "--port", "8011"]
+CMD ["python", "app.py"]
