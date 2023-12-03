@@ -18,8 +18,8 @@ WORKDIR /var/www
 COPY ./requirements.txt /var/www/requirements.txt
 
 # Install Flask and other dependencies
-RUN pip install --no-cache-dir -r requirements.txt && \
-    pip install --upgrade pip
+RUN  pip install --upgrade pip &&\
+    pip install -r requirements.txt
 
 # Expose the port that Flask will run on
 EXPOSE 8011
