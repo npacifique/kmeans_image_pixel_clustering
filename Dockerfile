@@ -1,6 +1,11 @@
 # Use the official Ubuntu image as the base image
 FROM ubuntu
 
+
+# Set environment variables to avoid debconf warnings
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TERM=linux
+
 # Update the package repository and install Python 3 and pip
 RUN apt-get update && \
     apt-get install -y python3 python3-pip 
