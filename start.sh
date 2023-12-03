@@ -1,7 +1,6 @@
 #!/bin/bash
 
-app="kmeans_image_extractor.api"
-docker_image_tag="${app}:latest"
+docker_image_tag="kmeans_image_extractor:latest"
 container="kmeans_extractor.api"
 
 # Check if the Docker image already exists
@@ -12,9 +11,9 @@ if docker image inspect "${docker_image_tag}" &> /dev/null; then
 fi
 
 # Build the Docker image
-docker build -t "${app}" .
+docker build -t "${docker_image_tag}" .
 
 # Run the Docker container
 docker run -d -p 8011:8011 \
-  --name="${app}" \
-  -v "$PWD:/app" "${container}"
+  --name="${container}" \
+  -v "$PWD:/app" "${docker_image_tag}"
