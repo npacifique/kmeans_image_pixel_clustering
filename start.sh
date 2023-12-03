@@ -1,7 +1,7 @@
 #!/bin/bash
 
 app="kmeans_image_extractor.api"
-docker_image_tag="${app}:latest"
+docker_image_tag="${app}"
 
 # Check if the Docker image already exists
 if docker image inspect "${docker_image_tag}" &> /dev/null; then
