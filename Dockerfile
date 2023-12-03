@@ -1,5 +1,5 @@
 # Use the official Ubuntu image as the base image
-FROM ubuntu:latest
+FROM ubuntu
 
 # Update the package repository and install Python 3 and pip
 RUN apt-get update 
