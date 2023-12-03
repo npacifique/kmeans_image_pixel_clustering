@@ -18,8 +18,7 @@ COPY ./requirements.txt /var/www/requirements.txt
 
 # Install Flask and other dependencies
 RUN pip3 install --no-cache-dir Flask && \
-    pip install --upgrade pip && \
-    pip install -r /var/www/requirements.txt
+    pip install --upgrade pip 
 
 # Expose the port that Flask will run on
 EXPOSE 8011
