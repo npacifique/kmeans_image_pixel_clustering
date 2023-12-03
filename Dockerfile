@@ -22,7 +22,7 @@ RUN pip install --upgrade pip
 #RUN pip install -r /var/www/requirements.txt
 
 # Expose the port that Flask will run on
-EXPOSE 8111
+EXPOSE 8011
 
 # Define the command to run the application
 CMD ["python3", "app.py"]
