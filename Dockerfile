@@ -2,8 +2,14 @@
 FROM ubuntu:latest
 
 # Update the package repository and install Python 3 and pip
+RUN apt-get update 
 
 RUN apt install python3 python3-pip -y
+
+# RUN apt-get update && \
+#     apt-get install -y python3.6 python3-pip && \
+#     ln -s /usr/bin/python3.6 /usr/bin/python && \
+#     ln -s /usr/bin/pip3 /usr/bin/pip
 
 # Set the working directory
 WORKDIR /var/www
