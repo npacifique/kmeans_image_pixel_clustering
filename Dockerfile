@@ -1,8 +1,8 @@
 # Use the official Alpine Linux image as the base image
-FROM alpine:latest
+FROM ubuntu:latest
 
 # Update the package repository and install Python 3 and pip
-RUN apk update && \
+RUN apt update && \
     apk add --no-cache python3 && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
