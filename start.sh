@@ -6,7 +6,7 @@ docker_image_tag="${app}"
 # Check if the Docker image already exists
 if docker image inspect "${docker_image_tag}" &> /dev/null; then
     echo "Removing existing Docker image: ${docker_image_tag}"
-    docker image rm "${docker_image_tag}"
+    docker image rm "${docker_image_tag} -f"
 fi
 
 # Build the Docker image

@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Update the package repository and install Python 3 and pip
 RUN apt-get update && \
-    apt-get python3 && \
+    apt-get python3.6 && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     apt-get py3-pip && \
