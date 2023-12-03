@@ -8,7 +8,8 @@ ENV TERM=linux
 
 # Update the package repository and install Python 3 and pip
 RUN apt-get update && \
-    apt-get install -y apt-utils
+    apt-get install -y wget
+
 
 
 RUN apt-get update && \
