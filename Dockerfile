@@ -5,6 +5,9 @@ FROM ubuntu
 RUN apt-get update && \
     apt-get install -y python3 python3-pip
 
+# Install python3-venv package
+RUN apt-get install -y python3.10-venv
+
 # Set the working directory
 WORKDIR /var/www
 
