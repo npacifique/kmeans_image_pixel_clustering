@@ -1,24 +1,15 @@
-# Use the official Ubuntu image as the base image
-FROM ubuntu
-
-RUN apt-get install -y --only-upgrade apt
-
-# Update the package repository and install Python 3 and pip
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y apt-utils
-
-RUN apt-get update && \
-    apt-get install -y python3 python3-pip 
-
-
-# Install python3-venv package
-RUN apt-get install -y python3.10-venv
+# Use the official Alpine Linux image as the base image
+FROM python:3.10-alpine
 
 # Set the working directory
 WORKDIR /var/www
 
 # Copy the requirements file into the container at /var/www
 COPY ./requirements.txt /var/www/requirements.txt
+
+# Install required packages
+RUN apk update && \
+    apk add --no-cache build-base python3-dev libffi-dev openssl-dev
 
 # Create and activate a virtual environment
 RUN python3 -m venv venv
