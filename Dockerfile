@@ -4,7 +4,8 @@ FROM ubuntu:latest
 # Update the package repository and install Python 3 and pip
 RUN apt-get update 
 
-RUN apt install python3 python3-pip -y
+RUN apt install python3 python3-pip -y && \
+    ln -s /usr/bin/python3 /usr/bin/python
 
 # RUN apt-get update && \
 #     apt-get install -y python3.6 python3-pip && \
@@ -25,4 +26,4 @@ RUN  pip install --upgrade pip &&\
 EXPOSE 8011
 
 # Define the command to run the application
-CMD ["python", "app.py"]
+CMD ["/usr/bin/python3", "app.py"]
