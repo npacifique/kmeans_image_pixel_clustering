@@ -8,9 +8,12 @@ ENV TERM=linux
 
 # Update the package repository and install Python 3 and pip
 RUN apt-get update && \
+    apt-get install -y apt-utils
+
+
+RUN apt-get update && \
     apt-get install -y python3 python3-pip 
 
-RUN apt-get install -y apt-utils
 
 # Install python3-venv package
 RUN apt-get install -y python3.10-venv
