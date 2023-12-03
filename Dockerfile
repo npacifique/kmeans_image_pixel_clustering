@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt && \
     pip install --upgrade pip
 
 # Expose the port that Flask will run on
-# EXPOSE 8011
+EXPOSE 8011
 
 # Define the command to run the application
-CMD ["python3", "app.py"]
+CMD ["python", "app.py", "--port", "8011"]

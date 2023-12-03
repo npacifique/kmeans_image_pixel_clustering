@@ -12,6 +12,7 @@ from flask_cors import CORS
 import time
 
 app = Flask(__name__)
+app.run(debug=True)
 # cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 CORS(app, resources={r"/*": {"origins": "*"}})
 

@@ -1,0 +1,7 @@
+#!C:\Users\pacif\OneDrive\Desktop\projects\img_color_reader\public\.env\Scripts\python.exe
+
+from dipy.workflows.flow_runner import run_flow
+from dipy.workflows.align import ApplyTransformFlow
+
+if __name__ == "__main__":
+    run_flow(ApplyTransformFlow())
