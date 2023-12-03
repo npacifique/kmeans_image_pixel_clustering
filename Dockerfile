@@ -1,9 +1,7 @@
 # Use the official Ubuntu image as the base image
 FROM ubuntu
 
-
-# Set environment variables to avoid debconf warnings
-ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y --only-upgrade apt
 
 # Update the package repository and install Python 3 and pip
 ARG DEBIAN_FRONTEND=noninteractive
