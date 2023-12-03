@@ -19,4 +19,4 @@ COPY ./requirements.txt /var/www/requirements.txt
 # Install Flask
 RUN pip3 install --no-cache-dir Flask
 RUN pip install --upgrade pip
-RUN pip install -r /var/www/requirements.txt
+#RUN pip install -r /var/www/requirements.txt
