@@ -25,4 +25,4 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 # EXPOSE 8011
 
 # Define the command to run the application
-CMD ["/usr/bin/python3", "app.py"]
+CMD ["python3", "app.py"]
