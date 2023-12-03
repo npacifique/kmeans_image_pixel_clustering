@@ -26,4 +26,4 @@ RUN  pip install --upgrade pip &&\
 EXPOSE 8011
 
 # Define the command to run the application
-CMD ["/usr/bin/python3", "app.py"]
+CMD ["/usr/bin/python", "app.py"]
