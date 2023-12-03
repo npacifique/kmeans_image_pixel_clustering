@@ -2,11 +2,11 @@
 FROM ubuntu:latest
 
 # Update the package repository and install Python 3 and pip
-RUN apt update && \
-    apk add --no-cache python3 && \
+RUN apt-get update && \
+    apt-get python3 && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
-    apk add --no-cache py3-pip && \
+    apt-get py3-pip && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
 
