@@ -9,8 +9,8 @@ RUN apk update && \
     rm -r /usr/lib/python*/ensurepip && \
     apk add --no-cache py3-pip && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-    rm -r /root/.cache
+    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
+
 
 ENV STATIC_URL /static
 ENV STATIC_PATH /var/www/app/static
