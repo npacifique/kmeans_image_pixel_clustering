@@ -1,4 +1,3 @@
-# FROM tiangolo/uwsgi-nginx-flask:python3.8-alpine
 # Use the official Alpine Linux image as the base image
 FROM alpine:latest
 
@@ -11,15 +10,16 @@ RUN apk update && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
 
+# Set the working directory
+WORKDIR /var/www
 
-ENV STATIC_URL /static
-ENV STATIC_PATH /var/www/app/static
+# Copy the requirements file into the container at /var/www
 COPY ./requirements.txt /var/www/requirements.txt
 
-# Install Flask
-RUN pip3 install --no-cache-dir Flask
-RUN pip install --upgrade pip
-#RUN pip install -r /var/www/requirements.txt
+# Install Flask and other dependencies
+RUN pip3 install --no-cache-dir Flask && \
+    pip install --upgrade pip && \
+    pip install -r /var/www/requirements.txt
 
 # Expose the port that Flask will run on
 EXPOSE 8011
