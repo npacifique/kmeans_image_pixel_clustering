@@ -1,6 +1,7 @@
 FROM python:3.9-slim-buster
 WORKDIR /app
 COPY ./requirements.txt /app
+RUN pip install --root-user-action=ignore
 RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5000
