@@ -17,6 +17,7 @@ RUN . venv/bin/activate
 
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip
+RUN apt-get install -y libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev
 RUN pip install --upgrade setuptools
 RUN pip install packaging
 RUN pip install packaging dipy
