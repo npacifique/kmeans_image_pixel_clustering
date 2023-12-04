@@ -5,6 +5,7 @@ WORKDIR /app
 RUN useradd -ms /bin/bash dockeruser
 USER dockeruser
 
+RUN chown -R dockeruser /app
 RUN mkdir /app/venv && chown dockeruser /app/venv
 
 RUN python -m venv venv

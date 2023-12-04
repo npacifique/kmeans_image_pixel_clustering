@@ -1,4 +1,5 @@
 #!/bin/bash
+git pull 
 
 docker_image_tag="kmeans_image_extractor:latest"
 container="kmeans_extractor.api"
