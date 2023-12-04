@@ -14,6 +14,6 @@ fi
 docker build -t "${docker_image_tag}" .
 
 # Run the Docker container
-docker run -d -p 8011:8011 \
+docker run -d -p 8011:5000 \
   --name="${container}" \
   -v "$PWD:/app" "${docker_image_tag}"
