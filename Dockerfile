@@ -3,9 +3,9 @@ WORKDIR /app
 
 # Create a non-root user
 RUN useradd -ms /bin/bash dockeruser
-
-# Set the user as the active user
 USER dockeruser
+
+RUN mkdir /app/venv && chown dockeruser /app/venv
 
 RUN python -m venv venv
 RUN . venv/bin/activate
