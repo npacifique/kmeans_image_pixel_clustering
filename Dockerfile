@@ -8,7 +8,7 @@ USER dockeruser
 #RUN chown -R dockeruser /app
 #RUN mkdir /app/venv && chown dockeruser /app/venv
 
-RUN mkdir venv && chown dockeruser venv
+# RUN mkdir venv && chown dockeruser venv
 
 
 
