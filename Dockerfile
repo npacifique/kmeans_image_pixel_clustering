@@ -1,6 +1,12 @@
 FROM python:3.9-slim-buster
 WORKDIR /app
 
+# Create a non-root user
+RUN useradd -ms /bin/bash dockeruser
+
+# Set the user as the active user
+USER dockeruser
+
 RUN python -m venv venv
 RUN . venv/bin/activate
 
