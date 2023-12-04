@@ -16,6 +16,12 @@ RUN python3 -m venv venv
 RUN . venv/bin/activate
 
 # Upgrade pip and install dependencies
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
+RUN pip install packaging
+RUN pip install packaging dipy
+
+
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
